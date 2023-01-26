@@ -18,11 +18,10 @@ from django.urls import include, path
 from services import views
 
 urlpatterns = [
-    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
-    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('registro/', views.signup, name="registro"),
-    path('servicios/', views.servicios, name="servicios"),
+    path('mis-servicios/', views.misservicios, name="mis-servicios"),
     path('logout/', views.signout, name="logout"),
+    path('signin/', views.signin, name="signin"),
 ]
