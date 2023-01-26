@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container p6">
+    <h1>Signup (Regístate)</h1>
+
+    <form class="form container p-4" action="/registro/" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button>
+            Enviar
+        </button>
+    </form>
+</div>
+{% endblock %}
