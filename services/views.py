@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
+from .forms import ServicioForm
 
 # Create your views here.
 
@@ -40,6 +41,16 @@ def signup(request):
 def misservicios(request):
     return render(request, 'mis-servicios.html')
 
+def solicitar(request):
+    if request.method == 'GET':
+        return render(request, 'solicitud.html', {
+            'form': ServicioForm
+        })
+    else:
+        print(request.POST)
+        return render(request, 'solicitud.html', {
+            'form': ServicioForm
+        })
 
 def signout(request):
     logout(request)

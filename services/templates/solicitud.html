@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container m-4">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-header--title">Cotización de Servicios</h1>
+        </div>
+        <form action="/servicios/solicitar/" method="post" class="form container m-4">
+        <div class="card-body">
+            {% csrf_token %}
+            {{form.as_p}}
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-danger">
+                Enviar
+            </button>
+        </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
