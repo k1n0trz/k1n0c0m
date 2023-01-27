@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container text-center">
-    <h1>Mis servicios k1n0c0m</h1>
-    <p class="container"><span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat deleniti odit assumenda
-            deserunt aliquam ab maxime dicta dolor culpa, quibusdam ipsam mollitia rerum recusandae in earum temporibus
-            incidunt ipsa tenetur.</span><span>Recusandae consequatur maiores rem nisi, eaque facere autem odio
-            similique
-            saepe ea? Exercitationem cupiditate ex atque hic? Vel sapiente sit ullam perferendis, dignissimos aut
-            dolores
-            unde quisquam architecto modi pariatur?</span></p>
+<div class="servicios container">
+    <div class="servicios-header text-center">
+        <h1 class="servicios-header--title">Mis servicios solicitados k1n0c0m</h1>
+    </div>
+    <div class="servicios-body">
+        <div class="servicios-item container">
+            <ul class="servicio-list">
+                {% for servicio in servicios %}
+                <li class="servicio-list--item">
+                    {% if servicio.important %}
+                    <a href="{% url 'servicio_detalle' servicio.id %}" class="list__item--link">{{servicio.title}}</a>
+                    {% else %}
+                    <p class="title__important"><strong>{{servicio.title}}</strong></p>
+                    {% endif %}
+                    <p class="servicio__description">{{servicio.description}}</p>
+                    <p class="servicio__author"><strong>By: </strong>{{servicio.user.username}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </div>
 {% endblock %}
