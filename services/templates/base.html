@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -46,9 +47,7 @@
     <!-- hreflang -->
     <link rel="alternate" hreflang="es-CO" href="..." />
     <!-- Estilos -->
-    <style>
-        @import url('../static/css/estilos.css');
-    </style>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
 
 <body>
