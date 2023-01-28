@@ -1,0 +1,37 @@
+.privacy {
+    width: 80%;
+
+    .privacy__header {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .privacy__body {
+        .privacy__body--section {
+            margin-top: 40px;
+        }
+    }
+
+    a {
+        color: $Gr;
+        text-decoration: none;
+
+        &:hover {
+            transition: all .6s;
+            color: $Rd;
+        }
+    }
+}
+
+.cookies {
+    a {
+        color: $Gr;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+            transition: all .6s;
+            color: $Rd;
+        }
+    }
+}
