@@ -25,7 +25,7 @@ class Servicio(models.Model):
 
 class Solicitud(models.Model):
     Nombre = models.CharField(max_length=200)
-    Email = models.EmailField()
+    Email = models.EmailField(max_length=200)
     Teléfono = models.CharField(max_length=200)
     Ciudad = models.CharField(max_length=200)
     Dirección = models.CharField(max_length=200)
