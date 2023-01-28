@@ -1,3 +1,9 @@
+# coding: utf-8
+import os
+import ssl
+
+import django_heroku
+
 """
 Django settings for djqdk project.
 
@@ -49,6 +55,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 ROOT_URLCONF = "djqdk.urls"
 
@@ -115,10 +123,21 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-import os
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = "/static/"
+
+MEDIA_ROOT = "uploads"
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
+try:
+    from .local_settings import *  # noqa
+except ImportError:
+    pass
+
+django_heroku.settings(locals())
 
 LOGIN_URL = '/signin'
 
