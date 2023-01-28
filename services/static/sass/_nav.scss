@@ -1,0 +1,42 @@
+.nav__user {
+    .navbar {
+
+        .container-fluid {
+
+            .navbar-brand {
+                .container {
+                    align-items: center;
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .navbar__brand--img {
+                        width: 60px;
+                    }
+    
+                    .navbar__brand--txt {
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .navbar-right {
+                display: flex;
+                .navbar-social {
+                    margin-right: 20px;
+                    .navbar-social--link {
+                        color: $Gr;
+                        font-size: 24px;
+                        text-decoration: none;
+        
+                        &:hover {
+                            transition: all .6s;
+                            color: $Rd;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

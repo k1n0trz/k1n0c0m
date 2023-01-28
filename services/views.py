@@ -3,8 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-from .forms import ServicioForm
-from .models import Servicio
+from .forms import ServicioForm, SolicitudForm
+from .models import Servicio, Solicitud
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
@@ -12,7 +12,21 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    return render(request, 'home.html')
+    if request.method == 'GET':
+        return render(request, 'home.html', {
+            'form': SolicitudForm
+        })
+    else:
+        try:
+            form = SolicitudForm(request.POST, instance=Solicitud)
+            new_solicitud = form.save(commit=False)
+            new_solicitud.save()
+            return redirect('home')
+        except ValueError:
+            return render(request, 'home.html', {
+                'form': SolicitudForm,
+                'error': 'Por favor ingrese datos válidos'
+            })
 
 def contacto(request):
     return render(request, 'contacto.html')
