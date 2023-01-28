@@ -7,7 +7,7 @@
             <h1 class="card-header--title">Cotización de Servicios</h1>
         </div>
         {{error}}
-        <form action="/servicios/solicitar/" method="post" class="form container m-4">
+        <form action="/mis-servicios/solicitar/" method="post" class="form container m-4">
         <div class="card-body">
             {% csrf_token %}
             {{form.as_p}}
