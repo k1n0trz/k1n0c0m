@@ -1,5 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{{servicio.title}}</h1>
+<div class="container">
+    <h1>{{servicio.title}}</h1>
+
+    <form method="POST" class="form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-danger">
+            Actualizar
+        </button>
+    </form>
+
+    <div class="container d-flex">
+        <form action="{% url 'complete_servicio' servicio.id %}" method="POST" class="form">
+            {% csrf_token %}
+            <button class="btn btn-danger">
+                Completar
+            </button>
+        </form>
+
+        <form action="{% url 'complete_servicio' servicio.id %}" method="POST" class="form">
+            {% csrf_token %}
+            <button class="btn btn-danger">
+                Eliminar
+            </button>
+        </form>
+    </div>
+</div>
 {% endblock %}

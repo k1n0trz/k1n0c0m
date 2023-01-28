@@ -3,7 +3,7 @@
 {% block content %}
 <div class="servicios container">
     <div class="servicios-header text-center">
-        <h1 class="servicios-header--title">Mis servicios solicitados k1n0c0m</h1>
+        <h1 class="servicios-header--title">Mis servicios pendientes solicitados k1n0c0m</h1>
     </div>
     <div class="servicios-body">
         <div class="servicios-item container">
@@ -17,6 +17,7 @@
                     {% endif %}
                     <p class="servicio__description">{{servicio.description}}</p>
                     <p class="servicio__author"><strong>By: </strong>{{servicio.user.username}}</p>
+                    <p class="servicio__date">{{servicio.datecompleted|date:'M j Y:i'}}</p>
                 </li>
                 {% endfor %}
             </ul>

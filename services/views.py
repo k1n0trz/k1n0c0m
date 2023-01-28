@@ -5,12 +5,17 @@ from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .forms import ServicioForm
 from .models import Servicio
+from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 
 def home(request):
     return render(request, 'home.html')
+
+def contacto(request):
+    return render(request, 'contacto.html')
 
 def servicios(request):
     return render(request, 'servicios.html')
@@ -40,14 +45,48 @@ def signup(request):
             'error': 'El password no coincide'
         })
 
+@login_required
 def misservicios(request):
     servicios = Servicio.objects.filter(user=request.user, datecompleted__isnull=True)
     return render(request, 'mis-servicios.html', {'servicios': servicios})
 
-def servicio_detalle(request, servicio_id):
-    servicio = get_object_or_404(Servicio, pk=servicio_id)
-    return render(request, 'myservicio-detalle.html', {'servicio': servicio})
+@login_required
+def servicios_completados(request):
+    servicios = Servicio.objects.filter(user=request.user, datecompleted__isnull=False).order_by
+    ('-datecompleted')
+    return render(request, 'mis-servicios.html', {'servicios': servicios})
 
+@login_required
+def servicio_detalle(request, servicio_id):
+    if request.method == 'GET':
+        servicio = get_object_or_404(Servicio, pk=servicio_id, user=request.user)
+        form = ServicioForm(instance=servicio)
+        return render(request, 'myservicio-detalle.html', {'servicio': servicio, 'form': form})
+    else:
+        try:
+            servicio = get_object_or_404(Servicio, pk=servicio_id, user=request.user)
+            form = ServicioForm(request.POST, instance=servicio)
+            form.save()
+            return redirect('mis-servicios')
+        except ValueError:
+            return render(request, 'myservicio-detalle.html', {'servicio': servicio, 'form': form, 'error': 'Error actualizando servicio'})
+
+@login_required
+def complete_servicio(request, servicio_id):
+    servicio = get_object_or_404(Servicio, pk=servicio_id, user=request.user)
+    if request.method == 'POST':
+        servicio.datecompleted = timezone.now()
+        servicio.save()
+        return redirect('mis-servicios')
+
+@login_required
+def eliminar_servicio(request, servicio_id):
+    servicio = get_object_or_404(Servicio, pk=servicio_id, user=request.user)
+    if request.method == 'POST':
+        servicio.delete()
+        return redirect('mis-servicios')
+
+@login_required
 def solicitar(request):
     if request.method == 'GET':
         return render(request, 'solicitud.html', {
@@ -66,6 +105,7 @@ def solicitar(request):
                 'error': 'Por favor ingrese datos válidos'
             })
 
+@login_required
 def signout(request):
     logout(request)
     return redirect('home')
