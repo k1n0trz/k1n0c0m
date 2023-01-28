@@ -130,7 +130,7 @@ STATIC_URL = "/static/"
 MEDIA_ROOT = "uploads"
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "services/static"),)
 
 try:
     from .local_settings import *  # noqa
