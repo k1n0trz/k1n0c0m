@@ -129,6 +129,8 @@
         </nav>
     </div>
 
+    {{error}}
+
     {% block content %}
     {% endblock %}
 
@@ -150,7 +152,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="/solicitud/" method="post" class="form__pres">
+                            <form action="/solicitud/" method="POST" class="form__pres">
                                 {% csrf_token %}
                                 {{form.as_p}}
                                 <div class="modal-footer">

@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .forms import ServicioForm, SolicitudForm
-from .models import Servicio, Solicitud
+from .models import Servicio
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
@@ -17,7 +17,7 @@ def home(request):
         })
     else:
         try:
-            form = SolicitudForm(request.POST, instance=Solicitud)
+            form = SolicitudForm(request.POST)
             new_solicitud = form.save(commit=False)
             new_solicitud.save()
             return redirect('home')

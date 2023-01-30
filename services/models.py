@@ -24,13 +24,14 @@ class Servicio(models.Model):
         return self.title + '- by ' + self.user.username
 
 class Solicitud(models.Model):
-    Nombre = models.CharField(max_length=200)
-    Email = models.EmailField(max_length=200)
-    Teléfono = models.CharField(max_length=200)
-    Ciudad = models.CharField(max_length=200)
-    Dirección = models.CharField(max_length=200)
-    Servicio = models.IntegerField(null=False, blank=False, choices=solicitud_select, default=1)
-    Descripción = models.TextField(blank=True)
+    nombre = models.CharField(max_length=200)
+    correo = models.EmailField(max_length=200)
+    telefono = models.CharField(max_length=200)
+    ciudad = models.CharField(max_length=200)
+    direccion = models.CharField(max_length=200)
+    contrato = models.IntegerField(null=False, blank=False, choices=solicitud_select, default=1)
+    descripcion = models.TextField(blank=True)
+    creado = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.nombre

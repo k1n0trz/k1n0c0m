@@ -9,7 +9,7 @@ class ServicioForm(ModelForm):
 class SolicitudForm(ModelForm):
     class Meta:
         model = Solicitud
-        fields = ['Nombre', 'Email', 'Teléfono', 'Ciudad', 'Dirección', 'Servicio', 'Descripción']
+        fields = ['nombre', 'correo', 'telefono', 'ciudad', 'direccion', 'contrato', 'descripcion']
 
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
