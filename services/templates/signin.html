@@ -1,27 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container p4">
-        <div class="container">
-            {{error}}
-        </div>
-    <form action="/signin/" method="post" class="form container">
-        <div class="row m-4 w-50">
-            <div class="card">
-                <div class="card-header">
-                    <h1 class="card-header__title">Iniciar Sesión</h1>
-                </div>
-                <div class="card-body">
-                    {% csrf_token %}
-                    {{form.as_p}}
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-danger">
-                        Inciar Sesión
-                    </button>
-                </div>
-            </div>
-        </div>
-    </form>
+<div class="inner">
+    <img src="../static/img/inner/inner-ser.jpg" alt="" class="inner__bg">
 </div>
+
+<div class="inner__mov">
+    <img src="../static/img/rec/inner-mov.jpg" alt="" class="inner__mov--img">
+</div>
+
+<main class="container signin">
+    {{error}}
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <form action="/signin/" method="POST" class="card card-body mt-5">
+                <div class="signin__header">
+                    <h2 class="signin__header--title text-center">Iniciar Sesión</h2>
+                </div>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username">Usuario:</label>
+                    <input type="text" name="username" class="form-control" placeholder="Nombre de usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" class="form-control" placeholder="Escriba su contraseña">
+                </div>
+                <!-- {{form}} -->
+                <button class="btn btn-danger">
+                    Inciar Sesión
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
 {% endblock %}

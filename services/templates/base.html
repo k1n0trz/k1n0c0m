@@ -70,6 +70,11 @@
                             class="navbar-social--link icon-facebook"></a>
                         <a href="https://www.instagram.com/k1n0c0m/" rel="nofollow" target="_blank"
                             class="navbar-social--link icon-instagram"></a>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}" class="navbar-social--link icon-user-times"></a>
+                        {% else %}
+                        <a href="{% url 'signin' %}" class="navbar-social--link icon-user"></a>
+                        {% endif %}
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -113,7 +118,7 @@
                                     </li>
                                     <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
                                     {% else %}
-                                    <li><a class="dropdown-item" href="{% url 'registro' %}">Registro</a></li>
+                                    <!-- <li><a class="dropdown-item" href="{% url 'registro' %}">Registro</a></li> -->
                                     <li><a class="dropdown-item" href="{% url 'signin' %}">Iniciar Sesión</a></li>
                                     {% endif %}
                                 </ul>
@@ -129,8 +134,6 @@
         </nav>
     </div>
 
-    {{error}}
-
     {% block content %}
     {% endblock %}
 
@@ -141,7 +144,6 @@
             <button type="button" class="pres__link" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Solicitar Presupuesto
             </button>
-
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -155,11 +157,58 @@
                             <form action="/solicitud/" method="POST" class="form__pres">
                                 {% csrf_token %}
                                 {{form.as_p}}
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Cerrar</button>
-                                    <button class="btn btn-danger">Enviar</button>
-                                </div>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button class="btn btn-danger">Enviar</button>
+                                <!--<div class="form-group">
+                                    <div class="mb-3">
+                                        <label for="nombre" class="label__solicitud">Tu nombre (*)</label>
+                                        <input type="text" name="nombre" id="" class="form-control"
+                                            placeholder="Alberto Pérez">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="label__solicitud">Correo electrónico (*)</label>
+                                        <input type="email" name="email" id="" class="form-control"
+                                            placeholder="albertoperez@gmail.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telefono" class="label__solicitud">Contacto</label>
+                                        <input type="text" name="telefono" id="" class="form-control"
+                                            placeholder="324 528 8239">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="ciudad" class="label__solicitud">Ciudad/Departamento</label>
+                                        <input type="text" name="ciudad" id="" class="form-control"
+                                            placeholder="Medellín/Antioquia">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="direccion" class="label__solicitud">Dirección</label>
+                                        <input type="text" name="direccion" id="" class="form-control"
+                                            placeholder="Calle 2B #33-49">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="direccion" class="label__solicitud">Servicio</label>
+                                        <select name="contrato" id="" class="form-control">
+                                            <option value="Seleccione un servicio">Seleccione un servicio:</option>
+                                            <option value="Marketing">Marketing</option>
+                                            <option value="Diseño Gráfico">Diseño Gráfico</option>
+                                            <option value="Desarrollo Web">Desarrollo Web</option>
+                                            <option value="Producción Fotográfica/Audiovisual">Producción
+                                                Fotográfica/Audiovisual</option>
+                                            <option value="Tecnología Blockchain">Tecnología Blockchain</option>
+                                            <option value="Otro">Otros...</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="descripcion" class="label__solicitud">Descripción</label>
+                                        <textarea name="descripcion" class="form-control"
+                                            placeholder="(Máx 500 Caracteres)"></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button class="btn btn-danger">Enviar</button>
+                                    </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
