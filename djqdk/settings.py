@@ -84,8 +84,13 @@ WSGI_APPLICATION = "djqdk.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dec4vai3l7r30f',
+        'USER': 'khlhsfsycduvna',
+        'PASSWORD': '93ec3cbc2243cf30a33f08887fca5a1ec8a154b81c00c5c7d43ae3c68d6df2b9',
+        'HOST': 'ec2-3-209-124-113.compute-1.amazonaws.com',
     }
 }
 
@@ -130,7 +135,7 @@ STATIC_URL = "./static/"
 MEDIA_ROOT = "uploads"
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "/static/"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "services/static/"),)
 
 try:
     from .local_settings import *  # noqa
