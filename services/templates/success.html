@@ -2,10 +2,62 @@
 
 {% block content %}
 
-<h1>Solicitud enviada con éxito</h1>
+<form action="/solicitud/" method="POST" class="form__pres">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    <button class="btn btn-danger">Enviar</button>
+</form>
 
-<p>
-    por favor regrese a la página de <a href="/">Inicio</a>
-</p>
+<!--<div class="form-group">
+        <div class="mb-3">
+            <label for="nombre" class="label__solicitud">Tu nombre (*)</label>
+            <input type="text" name="nombre" id="" class="form-control"
+                placeholder="Alberto Pérez">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="label__solicitud">Correo electrónico (*)</label>
+            <input type="email" name="email" id="" class="form-control"
+                placeholder="albertoperez@gmail.com">
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="label__solicitud">Contacto</label>
+            <input type="text" name="telefono" id="" class="form-control"
+                placeholder="324 528 8239">
+        </div>
+        <div class="mb-3">
+            <label for="ciudad" class="label__solicitud">Ciudad/Departamento</label>
+            <input type="text" name="ciudad" id="" class="form-control"
+                placeholder="Medellín/Antioquia">
+        </div>
+        <div class="mb-3">
+            <label for="direccion" class="label__solicitud">Dirección</label>
+            <input type="text" name="direccion" id="" class="form-control"
+                placeholder="Calle 2B #33-49">
+        </div>
+        <div class="mb-3">
+            <label for="direccion" class="label__solicitud">Servicio</label>
+            <select name="contrato" id="" class="form-control">
+                <option value="Seleccione un servicio">Seleccione un servicio:</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Diseño Gráfico">Diseño Gráfico</option>
+                <option value="Desarrollo Web">Desarrollo Web</option>
+                <option value="Producción Fotográfica/Audiovisual">Producción
+                    Fotográfica/Audiovisual</option>
+                <option value="Tecnología Blockchain">Tecnología Blockchain</option>
+                <option value="Otro">Otros...</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="descripcion" class="label__solicitud">Descripción</label>
+            <textarea name="descripcion" class="form-control"
+                placeholder="(Máx 500 Caracteres)"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+                data-bs-dismiss="modal">Cerrar</button>
+            <button class="btn btn-danger">Enviar</button>
+        </div>
+    </div> -->
 
 {% endblock %}

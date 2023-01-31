@@ -11,8 +11,11 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
+    return render(request, 'home.html')
+
+def solicitud(request):
     if request.method == 'GET':
-        return render(request, 'home.html', {
+        return render(request, 'success.html', {
             'form': SolicitudForm,
         })
     else:
@@ -20,18 +23,16 @@ def home(request):
             form = SolicitudForm(request.POST)
             new_solicitud = form.save(commit=False)
             new_solicitud.save()
-            return redirect('success')
+            return redirect('solicitud')
         except ValueError:
             return render(request, 'success.html', {
                 'form': SolicitudForm,
                 'error': 'Por favor ingrese datos válidos'
             })
 
+
 def contacto(request):
     return render(request, 'contacto.html')
-
-def solicitud(request):
-    return render(request, 'success.html')
 
 def servicios(request):
     return render(request, 'servicios.html')
@@ -105,7 +106,7 @@ def eliminar_servicio(request, servicio_id):
 @login_required
 def solicitar(request):
     if request.method == 'GET':
-        return render(request, 'solicitud.html', {
+        return render(request, 'cotizacion.html', {
             'form': ServicioForm
         })
     else:
@@ -116,7 +117,7 @@ def solicitar(request):
             new_servicio.save()
             return redirect('mis-servicios')
         except ValueError:
-            return render(request, 'solicitud.html', {
+            return render(request, 'cotizacion.html', {
                 'form': ServicioForm,
                 'error': 'Por favor ingrese datos válidos'
             })
