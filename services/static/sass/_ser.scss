@@ -79,6 +79,29 @@
     }
 }
 
+.servicio__container {
+    .servicio__header {
+        margin: 40px;
+    }
+
+    .servicio__body {
+        .servicio__list {
+            .servicio__item {
+                list-style: none;
+                .servicio__link {
+                    color: $Gr;
+                    text-decoration: none;
+
+                    &:hover {
+                        transition: all .6s;
+                        color: $Rdo;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (min-width: 300px) and (max-width: 820px) {
     .ser {
         width: 98%;
