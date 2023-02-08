@@ -35,7 +35,7 @@
                 <h3 class="section__header--title">Diseño</h3>
             </div>
             <div class="section__body">
-                <a data-bs-toggle="modal" data-bs-target="#modalDiseno" class="section__body--link">
+                <a href="{% url 'diseno' %}" class="section__body--link">
                     <img src="../static/img/ser/diseno.jpg" alt="" class="section__body--image">
                 </a>
             </div>
@@ -43,9 +43,7 @@
                 <p class="section__footer--txt">Diseño original y de punta para <strong>web, software, marca</strong> y
                     cualquier idea creativa que tengas en mente.</p>
 
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalDiseno">
-                    Ver Más
-                </button>
+                <a href="{% url 'diseno' %}" class="section__footer--link">Ver Más</a>
             </div>
         </div>
 
@@ -54,7 +52,7 @@
                 <h3 class="section__header--title">Desarrollo Web/App</h3>
             </div>
             <div class="section__body">
-                <a data-bs-toggle="modal" data-bs-target="#modalDllo" class="section__body--link">
+                <a href="{% url 'desarrollo' %}" class="section__body--link">
                     <img src="../static/img/ser/develop.jpg" alt="" class="section__body--image">
                 </a>
             </div>
@@ -62,9 +60,7 @@
                 <p class="section__footer--txt">Incursiona en las nuevas tecnologías y medios de mercadeo con un nuevo
                     <strong>Sitio Web o con una App</strong>
                 </p>
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalDllo">
-                    Ver Más
-                </button>
+                <a href="{% url 'desarrollo' %}" class="section__footer--link">Ver Más</a>
             </div>
         </div>
 
@@ -73,16 +69,14 @@
                 <h3 class="section__header--title">Marketing</h3>
             </div>
             <div class="section__body">
-                <a data-bs-toggle="modal" data-bs-target="#modalmkt" class="section__body--link">
+                <a href="{% url 'marketing' %}" class="section__body--link">
                     <img src="../static/img/ser/marketing.jpg" alt="" class="section__body--image">
                 </a>
             </div>
             <div class="section__footer">
                 <p class="section__footer--txt">Estrategias inteligentes en <strong>Marketing Digital y
                         Tradicional</strong> para llevar tu negocio a otro nivel</p>
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalmkt">
-                    Ver Más
-                </button>
+                <a href="{% url 'marketing' %}" class="section__footer--link">Ver Más</a>
             </div>
         </div>
     </div>
@@ -93,7 +87,7 @@
                 <h3 class="section__header--title">Fotografía y Video</h3>
             </div>
             <div class="section__body">
-                <a data-bs-toggle="modal" data-bs-target="#modalprod" class="section__body--link">
+                <a href="{% url 'produccion' %}" class="section__body--link">
                     <img src="../static/img/ser/edicion.jpg" alt="" class="section__body--image">
                 </a>
             </div>
@@ -102,9 +96,7 @@
                     Desarrollo de <strong>contenido multimedia</strong> con efectos y musicalidad
                     originales.
                 </p>
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalprod">
-                    Ver Más
-                </button>
+                <a href="{% url 'produccion' %}" class="section__footer--link">Ver Más</a>
             </div>
         </div>
 
@@ -113,7 +105,7 @@
                 <h3 class="section__header--title">Cubrimiento de eventos</h3>
             </div>
             <div class="section__body">
-                <a data-bs-toggle="modal" data-bs-target="#modalevent" class="section__body--link">
+                <a href="{% url 'eventos' %}" class="section__body--link">
                     <img src="../static/img/ser/eventos.jpg" alt="" class="section__body--image">
                 </a>
             </div>
@@ -122,9 +114,7 @@
                     Cubrimos eventos sociales, corporativos o de cualquier índole con <strong>personal experimentado y
                         alta teconología</strong>.
                 </p>
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalevent">
-                    Ver Más
-                </button>
+                <a href="{% url 'eventos' %}" class="section__footer--link">Ver Más</a>
             </div>
         </div>
 
@@ -133,7 +123,7 @@
                 <h3 class="section__header--title">Tecnología Blockchain</h3>
             </div>
             <div class="section__body">
-                <a data-bs-toggle="modal" data-bs-target="#modalblock" class="section__body--link">
+                <a href="{% url 'blockchain' %}" class="section__body--link">
                     <img src="../static/img/ser/blockchain.jpg" alt="" class="section__body--image">
                 </a>
             </div>
@@ -142,250 +132,10 @@
                     Descubre los secretos detrás de la <strong>tecnología blockchain y el trading con
                         criptoactivos</strong>.
                 </p>
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalblock">
-                    Ver Más
-                </button>
+                <a href="{% url 'blockchain' %}" class="section__footer--link">Ver Más</a>
             </div>
         </div>
 
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalDiseno" tabindex="-1" aria-labelledby="modalDisenoLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content bg-dark" style="color: white;">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalDisenoLabel">Diseño Gráfico k1n0 c0m</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="servicio__img">
-                    <img src="" alt="" class="servicio__img--item">
-                </div>
-                <ul class="servicio__list">
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Ilustración de piezas/personajes</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Post's y plantillas de Redes Sociales</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Diseño de Menú/Catálogo de Producto/Servicio</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Diseño de Logo/Branding Corporativo</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Diseño de recursos audiovisuales</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Asesoramiento en Diseño Gráfico</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <a href="{% url 'solicitud' %}" class="btn btn-dark">¡Cotizar ahora!</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalDllo" tabindex="-1" aria-labelledby="modalDlloLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content bg-dark" style="color: white;">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalDlloLabel">Desarrollo k1n0 c0m</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="servicio__img">
-                    <img src="" alt="" class="servicio__img--item">
-                </div>
-                <ul class="servicio__list">
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Diagnóstico Web/App's</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Ajustes y Rediseño Web/App</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Desarrollo Web</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Desarrollo de Apps</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Desarrollo de e-commerce</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Desarrollo de CMR</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Asesoramiento Web/Ecommerce</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <a href="{% url 'solicitud' %}" class="btn btn-dark">¡Cotizar ahora!</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalmkt" tabindex="-1" aria-labelledby="modalmktLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content bg-dark" style="color: white;">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalmktLabel">Marketing k1n0 c0m</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="servicio__img">
-                    <img src="" alt="" class="servicio__img--item">
-                </div>
-                <ul class="servicio__list">
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Diagnóstico General en Marketing</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Estudio de mercado</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Plan de Comunicaciones</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Diagnóstico SEO/SEM</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Administración de redes tradicionales y digitales</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Manejo de públicos y audiencias</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Asesoramiento en Marketing y Comunicación Digital</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <a href="{% url 'solicitud' %}" class="btn btn-dark">¡Cotizar ahora!</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalprod" tabindex="-1" aria-labelledby="modalprodLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content bg-dark" style="color: white;">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalprodLabel">Diseño Gráfico k1n0 c0m</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="servicio__img">
-                    <img src="" alt="" class="servicio__img--item">
-                </div>
-                <ul class="servicio__list">
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Sesión de Fotografía</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Realización Audiovisual</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Edición fotográfica</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Edición Audiovisual</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Realización Audiovisual en Vivo</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Asesoramiento en Producción Fotográfica/Audiovisual</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <a href="{% url 'solicitud' %}" class="btn btn-dark">¡Cotizar ahora!</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalevent" tabindex="-1" aria-labelledby="modaleventLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content bg-dark" style="color: white;">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modaleventLabel">Diseño Gráfico k1n0 c0m</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="servicio__img">
-                    <img src="" alt="" class="servicio__img--item">
-                </div>
-                <ul class="servicio__list">
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Tarjetas de invitación</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Cubrimiento fotográfico</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Cubrimiento audiovisual</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Edición fotográfica/audiovisual</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Asesoramiento de Logística de eventos</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <a href="{% url 'solicitud' %}" class="btn btn-dark">¡Cotizar ahora!</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalblock" tabindex="-1" aria-labelledby="modalblockLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content bg-dark" style="color: white;">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalblockLabel">Diseño Gráfico k1n0 c0m</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="servicio__img">
-                    <img src="" alt="" class="servicio__img--item">
-                </div>
-                <ul class="servicio__list">
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Ilustración de piezas/personajes</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Post's y plantillas de Redes Sociales</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Diseño de Menú/Catálogo de Producto/Servicio</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Diseño de Logo/Branding Corporativo</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Diseño de recursos audiovisuales</a>
-                    </li>
-                    <li class="servicio__item">
-                        <a href="" class="servicio__link">Asesoramiento en Diseño Gráfico</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <a href="{% url 'solicitud' %}" class="btn btn-dark">¡Cotizar ahora!</a>
-            </div>
-        </div>
     </div>
 </div>
 

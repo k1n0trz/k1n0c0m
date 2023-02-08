@@ -86,16 +86,42 @@
     }
 
     .servicio__body {
+        margin-top: 60px;
         .servicio__list {
             .servicio__item {
                 list-style: none;
+                margin: 20px;
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
                 .servicio__link {
                     color: $Gr;
                     text-decoration: none;
+                    cursor: pointer;
+
+                    .servicio__link--title {
+                        margin-bottom: 20px;
+                    }
+
+                    .servicio__link--txt {
+                        margin-top: 10px;
+                    }
 
                     &:hover {
                         transition: all .6s;
                         color: $Rdo;
+                    }
+                }
+
+                .servicio__img {
+                    opacity: 0%;
+                }
+
+                &:hover {
+                    .servicio__img {
+                        transition: all .6s;
+                        opacity: 100%;
                     }
                 }
             }

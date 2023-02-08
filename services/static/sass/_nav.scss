@@ -10,7 +10,11 @@
                     justify-content: space-between;
     
                     .navbar__brand--img {
-                        width: 60px;
+                        width: 74px;
+                        background: url("../img/logo-intro-nav.png");
+                        background-repeat: no-repeat;
+                        border: 2px solid $Bl;
+                        margin-right: 10px;
                     }
     
                     .navbar__brand--txt {
