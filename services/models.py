@@ -35,3 +35,15 @@ class Solicitud(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class Numero(models.Model):
+    identifier = models.CharField(max_length=200)
+    ingreso = models.IntegerField(blank=False)
+    egreso = models.IntegerField(blank=False)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.identifier
+    
+    # def __str__(self):
+    #     return self.identifier + '- by ' + self.user.username
