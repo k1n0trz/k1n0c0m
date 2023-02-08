@@ -25,6 +25,7 @@
 
             .section__body {
                 position: static;
+                cursor: pointer;
 
                 .section__body--link {
                     position: static;
@@ -97,6 +98,21 @@
                         color: $Rdo;
                     }
                 }
+            }
+        }
+    }
+}
+
+.modal .modal-dialog .modal-content .modal-body .servicio__list {
+    .servicio__item {
+        list-style: none;
+        .servicio__link {
+            color: $Bl;
+            text-decoration: none;
+
+            &:hover {
+                transition: all .6s;
+                color: $Rd;
             }
         }
     }

@@ -19,24 +19,6 @@ def privacidad(request):
 def cookies(request):
     return render(request, 'politica-cookies.html')
 
-def diseno(request):
-    return render(request, 'diseno.html')
-
-def desarrollo(request):
-    return render(request, 'desarrollo.html')
-
-def marketing(request):
-    return render(request, 'marketing.html')
-
-def produccion(request):
-    return render(request, 'produccion.html')
-
-def eventos(request):
-    return render(request, 'eventos.html')
-
-def blockchain(request):
-    return render(request, 'blockchain.html')
-
 def solicitud(request):
     if request.method == 'GET':
         return render(request, 'success.html', {
